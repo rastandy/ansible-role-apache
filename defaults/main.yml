@@ -14,6 +14,11 @@ apache_remove_default_vhost: false
 apache_global_vhost_settings: |
   DirectoryIndex index.php index.html
 
+apache_vhosts_default_allow_override: "All"
+apache_vhosts_default_options: "-Indexes +FollowSymLinks"
+apache_vhosts_default_serveradmin: "webmaster@{{ ansible_hostname }}"
+apache_vhosts_default_loglevel: "warn"
+
 apache_vhosts:
   # Additional properties: 'serveradmin, serveralias, extra_parameters'.
   - servername: "local.dev"
